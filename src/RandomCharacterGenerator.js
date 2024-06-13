@@ -15,8 +15,10 @@ const RandomCharacterGenerator = () => {
   }, []);
 
   return (
-    <div>
-      <h1>{character}</h1>
+    <div className="container">
+      <div className="character-box">
+        <h1 className="character">{character}</h1>
+      </div>
     </div>
   );
 };
