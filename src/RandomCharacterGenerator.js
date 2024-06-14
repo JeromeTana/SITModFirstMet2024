@@ -1,30 +1,53 @@
-// src/RandomCharacterGenerator.js
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import './FlipCard.css'; // Import the CSS file for styling
+import RefreshIcon from './RefreshIcon'; // Import the RefreshIcon component
 
 const RandomCharacterGenerator = () => {
   const [character, setCharacter] = useState('');
+  const [flipped, setFlipped] = useState(false);
 
   const generateRandomCharacter = () => {
     const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
     const randomChar = chars.charAt(Math.floor(Math.random() * chars.length));
-    setCharacter(randomChar);
+    setFlipped(false);
+    setTimeout(() => {
+      setFlipped(true);
+      setCharacter(randomChar);
+    }, 500);
   };
 
-  useEffect(() => {
+  useState(() => {
     generateRandomCharacter();
   }, []);
 
+  const handleRefresh = () => {
+    generateRandomCharacter();
+  };
+
   return (
-    <div className="flex flex-col items-center justify-center h-screen bg-blue-50">
-      <div className="flex items-center justify-center w-48 h-48 mb-8 text-6xl font-bold text-green-500 border-4 border-green-500 rounded-lg bg-white">
-        {character}
+    <div className="flex justify-center items-center h-screen">
+      <div className="max-w-sm rounded overflow-hidden">
+        <div className="flip-card">
+          <div className={`flip-card-inner ${flipped ? 'flipped' : ''}`}>
+            <div className="flip-card-front">
+              <div className="flex justify-center items-center h-full">
+                <span className="text-[3rem] font-bold">แรกพบ SIT น้อย </span>
+              </div>
+            </div>
+            
+            <div className="flip-card-back">
+              <div className="flex justify-center items-center h-full">
+                <span className="text-[8rem] font-bold">{character}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="flex justify-center mt-4">
+          <button className="button" onClick={handleRefresh}>
+            <RefreshIcon className="refresh-icon" />
+          </button>
+        </div>
       </div>
-      <button 
-        className="px-4 py-2 text-white bg-green-500 rounded-lg hover:bg-green-600"
-        onClick={generateRandomCharacter}
-      >
-        Generate Character
-      </button>
     </div>
   );
 };
