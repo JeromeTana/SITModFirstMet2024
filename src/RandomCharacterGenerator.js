@@ -13,7 +13,7 @@ const RandomCharacterGenerator = () => {
     setTimeout(() => {
       setFlipped(true);
       setCharacter(randomChar);
-    }, 500);
+    }, 300);
   };
 
   useState(() => {
