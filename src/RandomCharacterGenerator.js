@@ -36,8 +36,10 @@ const RandomCharacterGenerator = () => {
             </div>
             
             <div className="flip-card-back">
-              <div className="flex justify-center items-center h-full">
-                <span className="text-[8rem] font-bold">{character}</span>
+              <div className="flip-card-border">
+                <div className="flex justify-center items-center h-full">
+                  <span className="text-[8rem] font-bold">{character}</span>
+                </div>
               </div>
             </div>
           </div>
