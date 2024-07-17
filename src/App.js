@@ -2,12 +2,15 @@
 import React from 'react';
 import './App.css';
 import RandomCharacterGenerator from './RandomCharacterGenerator';
+import FallingObjectBackground from './FallingObjectBackground';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <RandomCharacterGenerator />
+        <FallingObjectBackground image={'/images/ant.png'}>
+          <RandomCharacterGenerator />
+        </FallingObjectBackground>
       </header>
     </div>
   );

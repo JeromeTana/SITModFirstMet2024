@@ -30,8 +30,9 @@ const RandomCharacterGenerator = () => {
         <div className="flip-card">
           <div className={`flip-card-inner ${flipped ? 'flipped' : ''}`}>
             <div className="flip-card-front">
-              <div className="flex justify-center items-center h-full">
-                <span className="text-[3rem] font-bold">แรกพบ SIT น้อย </span>
+              <div className="flex justify-center items-center h-full rounded-lg">
+                {/* <span className="text-[3rem] font-bold">แรกพบ SIT น้อย </span> */}
+                <img src='/images/carnival-back-upsized-noborder.svg' alt=''/>
               </div>
             </div>
             

@@ -9,7 +9,6 @@ const FallingObjectBackground = ({children, image}) => {
       <div className='object'><img src={image} alt=''/></div>
       <div className='object'><img src={image} alt=''/></div>
       <div className='object'><img src={image} alt=''/></div>
-
       {children}
     </div>
   )
