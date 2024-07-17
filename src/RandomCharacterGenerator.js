@@ -1,58 +1,84 @@
-import React, { useState } from 'react';
-import './FlipCard.css'; // Import the CSS file for styling
-import RefreshIcon from './RefreshIcon'; // Import the RefreshIcon component
+import React, { useRef, useState } from "react";
+import "./styles/FlipCard.css"; // Import the CSS file for styling
+import RefreshButton from "./components/RefreshButton";
+import HelperButton from "./components/HelperButton";
 
 const RandomCharacterGenerator = () => {
-  const [character, setCharacter] = useState('');
-  const [flipped, setFlipped] = useState(false);
+    const [selectedChar, setCharacter] = useState("");
+    const [flipped, setFlipped] = useState(false);
+    const inputRef = useRef();
 
-  const generateRandomCharacter = () => {
-    const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-    const randomChar = chars.charAt(Math.floor(Math.random() * chars.length));
-    setFlipped(false);
-    setTimeout(() => {
-      setFlipped(true);
-      setCharacter(randomChar);
-    }, 300);
-  };
+    const generateRandomCharacter = () => {
+        const charList = "?????ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        if (inputRef.current) inputRef.current.value = "";
+        const randomChar = charList.charAt(
+            Math.floor(Math.random() * charList.length)
+        );
+        setFlipped(false);
+        setTimeout(() => {
+            setFlipped(true);
+            setCharacter(randomChar);
+        }, 300);
+    };
 
-  useState(() => {
-    generateRandomCharacter();
-  }, []);
+    useState(() => {
+        generateRandomCharacter();
+    }, []);
 
-  const handleRefresh = () => {
-    generateRandomCharacter();
-  };
+    const handleRefresh = () => {
+        generateRandomCharacter();
+    };
 
-  return (
-    <div className="flex justify-center items-center h-screen">
-      <div className="max-w-sm rounded overflow-hidden">
-        <div className="flip-card">
-          <div className={`flip-card-inner ${flipped ? 'flipped' : ''}`}>
-            <div className="flip-card-front">
-              <div className="flex justify-center items-center h-full rounded-lg">
-                {/* <span className="text-[3rem] font-bold">แรกพบ SIT น้อย </span> */}
-                <img src='/images/carnival-back-upsized-noborder.svg' alt=''/>
-              </div>
-            </div>
-            
-            <div className="flip-card-back">
-              <div className="flip-card-border">
-                <div className="flex justify-center items-center h-full">
-                  <span className="text-[8rem] font-bold">{character}</span>
+    return (
+        <div className="flex items-center justify-center h-screen">
+            <div className="max-w-sm overflow-hidden rounded">
+                <div className="flip-card">
+                    <div
+                        className={`flip-card-inner ${
+                            flipped ? "flipped" : ""
+                        }`}
+                    >
+                        <div className="bg-white flip-card-front">
+                            <div className="flex items-center justify-center h-full">
+                                <span className="text-[3rem] font-bold">
+                                    แรกพบ SIT น้อย
+                                </span>
+                            </div>
+                        </div>
+
+                        <div
+                            className={`flip-card-back ${
+                                selectedChar === "?"
+                                    ? "bg-gradient-to-tr from-pink-400 to-orange-300"
+                                    : "bg-white"
+                            }`}
+                        >
+                            <div className="flex text-[8rem] items-center justify-center h-full">
+                                {selectedChar === "?" ? (
+                                    <input
+                                        type="text"
+                                        ref={inputRef}
+                                        autoFocus
+                                        placeholder="?"
+                                        className=" bg-[#00000000] outline-none border-b-2 border-gray-400 w-3/4 font-bold text-center"
+                                        maxLength={1}
+                                    />
+                                ) : (
+                                    <span className="font-bold ">
+                                        {selectedChar}
+                                    </span>
+                                )}
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
+                <div className="flex justify-center mt-4">
+                    <RefreshButton handleRefresh={handleRefresh} />
+                </div>
             </div>
-          </div>
+            <HelperButton />
         </div>
-        <div className="flex justify-center mt-4">
-          <button className="button" onClick={handleRefresh}>
-            <RefreshIcon className="refresh-icon" />
-          </button>
-        </div>
-      </div>
-    </div>
-  );
+    );
 };
 
 export default RandomCharacterGenerator;
