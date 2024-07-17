@@ -42,7 +42,7 @@ const RandomCharacterGenerator = () => {
                         <div
                             className={`flip-card-back ${
                                 selectedChar === "?"
-                                    ? "bg-gradient-to-tr from-pink-400 to-orange-300"
+                                    ? "bg-gradient-to-tr from-pink-500 to-orange-500"
                                     : "bg-white"
                             }`}
                         >
@@ -53,7 +53,7 @@ const RandomCharacterGenerator = () => {
                                         ref={inputRef}
                                         autoFocus
                                         placeholder="?"
-                                        className=" bg-[#00000000] outline-none border-b-2 border-gray-400 w-3/4 font-bold text-center"
+                                        className=" bg-[#00000000] outline-none border-b-2 text-white border-gray-400 w-3/4 font-bold text-center"
                                         maxLength={1}
                                     />
                                 ) : (
