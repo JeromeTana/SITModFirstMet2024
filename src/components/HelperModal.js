@@ -21,7 +21,7 @@ const HelperModal = (props) => {
                         </p>
                     </li>
                     <li>
-                        <span className="px-2 py-1 font-bold rounded-lg bg-gradient-to-tr from-pink-400 to-orange-300">
+                        <span className="px-2 py-1 font-bold text-white rounded-lg bg-gradient-to-tr from-pink-500 to-orange-500">
                             Special card
                         </span>{" "}
                         จะแสดงเครื่องหมาย <span className="font-bold">?</span>{" "}
