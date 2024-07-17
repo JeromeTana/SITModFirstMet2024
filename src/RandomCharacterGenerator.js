@@ -38,7 +38,7 @@ const RandomCharacterGenerator = () => {
                             flipped ? "flipped" : ""
                         }`}
                     >
-                        <div className="bg-white border-white border-[20px] flip-card-front" />
+                        <div className="bg-white border-white border-[16px] flip-card-front" />
                         <div
                             className={`flip-card-back ${
                                 selectedChar === "?"
