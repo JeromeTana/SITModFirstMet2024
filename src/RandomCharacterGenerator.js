@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-import "./styles/FlipCard.css"; // Import the CSS file for styling
+import "./styles/App.css"; // Import the CSS file for styling
 import RefreshButton from "./components/RefreshButton";
 import HelperButton from "./components/HelperButton";
 
