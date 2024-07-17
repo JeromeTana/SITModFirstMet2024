@@ -35,7 +35,14 @@ body {
     font-size: 2rem;
     color: #333; /* Dark text */
     border-radius: 32px;
+    overflow: hidden;
     backface-visibility: hidden; /* Hides the back side when flipped */
+  }
+
+  .flip-card-front {
+    background-image: url('../../public/images/carnival-back-upsized-noborder.svg');
+    background-size: cover;
+    background-position: center;
   }
 
   /* Back Side of Card */
