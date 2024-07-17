@@ -9,7 +9,7 @@ const RandomCharacterGenerator = () => {
     const inputRef = useRef();
 
     const generateRandomCharacter = () => {
-        const charList = "???????ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        const charList = "?????ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         if (inputRef.current) inputRef.current.value = "";
         const randomChar = charList.charAt(
             Math.floor(Math.random() * charList.length)
