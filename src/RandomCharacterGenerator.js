@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-import "./styles/FlipCard.css"; // Import the CSS file for styling
+import "./styles/App.css"; // Import the CSS file for styling
 import RefreshButton from "./components/RefreshButton";
 import HelperButton from "./components/HelperButton";
 
@@ -31,21 +31,14 @@ const RandomCharacterGenerator = () => {
 
     return (
         <div className="flex items-center justify-center h-screen">
-            <div className="max-w-sm overflow-hidden rounded">
+            <div className="max-w-sm">
                 <div className="flip-card">
                     <div
                         className={`flip-card-inner ${
                             flipped ? "flipped" : ""
                         }`}
                     >
-                        <div className="bg-white flip-card-front">
-                            <div className="flex items-center justify-center h-full">
-                                <span className="text-[3rem] font-bold">
-                                    แรกพบ SIT น้อย
-                                </span>
-                            </div>
-                        </div>
-
+                        <div className="bg-white border-white border-[16px] flip-card-front" />
                         <div
                             className={`flip-card-back ${
                                 selectedChar === "?"
