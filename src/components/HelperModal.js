@@ -6,7 +6,7 @@ const HelperModal = (props) => {
             className="fixed inset-0 flex items-center justify-center text-xl leading-9 bg-black bg-opacity-50"
             onClick={props.toggleHelperModal}
         >
-            <div className="w-full p-8 m-5 bg-white rounded-3xl">
+            <div className="w-full max-w-screen-sm p-8 m-5 bg-white rounded-3xl">
                 <h2 className="mb-5 text-2xl font-bold">วิธีการเล่น</h2>
                 <ul className="list-disc list-inside">
                     <li>
