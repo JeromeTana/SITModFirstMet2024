@@ -10,10 +10,8 @@ const HelperModal = (props) => {
                 <h2 className="mb-5 text-2xl font-bold">วิธีการเล่น</h2>
                 <ul className="list-disc list-inside">
                     <li>
-                        <p>
-                            ทุก ๆ ครั้ง จะสุ่มตัวอักษรภาษาอังกฤษ
-                            <span> A-Z </span>ขึ้นมาแสดง 1 ตัว
-                        </p>
+                        ทุก ๆ ครั้ง จะสุ่มตัวอักษรภาษาอังกฤษ A-Z ขึ้นมาแสดง 1
+                        ตัว
                     </li>
                     <li>
                         <p className="inline-flex">
@@ -23,14 +21,11 @@ const HelperModal = (props) => {
                         </p>
                     </li>
                     <li>
-                        <p>
-                            <span className="px-2 py-1 font-bold rounded-lg bg-gradient-to-tr from-pink-400 to-orange-300">
-                                Special card
-                            </span>{" "}
-                            จะแสดงเครื่องหมาย{" "}
-                            <span className="font-bold">?</span>{" "}
-                            และสามารถพิมพ์ตัวอักษรอะไรก็ได้เข้าไป 1 ตัว
-                        </p>
+                        <span className="px-2 py-1 font-bold rounded-lg bg-gradient-to-tr from-pink-400 to-orange-300">
+                            Special card
+                        </span>{" "}
+                        จะแสดงเครื่องหมาย <span className="font-bold">?</span>{" "}
+                        และสามารถพิมพ์ตัวอักษรอะไรก็ได้เข้าไป 1 ตัว
                     </li>
                 </ul>
             </div>
