@@ -35,7 +35,6 @@ body {
     justify-content: center;
     font-size: 2rem;
     color: #333; /* Dark text */
-    background-color: white; /* Light background */
     border-radius: 32px;
     backface-visibility: hidden; /* Hides the back side when flipped */
   }
