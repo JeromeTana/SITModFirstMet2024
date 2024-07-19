@@ -55,6 +55,12 @@ const RandomCharacterGenerator = () => {
                                         placeholder="?"
                                         className=" bg-[#00000000] outline-none border-b-2 text-white border-gray-400 w-3/4 font-bold text-center"
                                         maxLength={1}
+                                        // disable backspace
+                                        onKeyDown={(e) => {
+                                            if (e.key === "Backspace") {
+                                                e.preventDefault();
+                                            }
+                                        }}
                                     />
                                 ) : (
                                     <span className="font-bold ">
